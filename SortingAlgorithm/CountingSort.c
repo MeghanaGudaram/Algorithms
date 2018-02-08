@@ -28,7 +28,7 @@ void BigOn(int *arr, int size){
 	for(int i=0; i<size; i++){
 		count[arr[i]]++;
 	}
-	for(int i=0;i<size; i++){
+	for(int i=0;i<maxelement; i++){
 		if(count[i] > 1)
 			printf("BigOn, Duplicate found: %d\n", i);
 	}
