@@ -1,33 +1,51 @@
+/*
+*	Algorithm: CountingSort
+*	Author: Meghana Gudaram
+*	Complexity: O(n^2) and O(n)
+*/
 #include<stdio.h>
+#include<stdlib.h>
 
-void nsquare(int *arr, int size){
+void BigOnsquare(int *arr, int size){
 	for(int i=0; i<size; i++){
 		for(int j=0; j<size; j++){
 			if( (i!=j) && (arr[i]==arr[j])){
-				printf("Duplicate found: %d\n", arr[i]);
-				return;
+				printf("BigOnsquare, Duplicate found: %d\n", arr[i]);
 			}
 		}
 	}
 }
-void n(int *arr, int size){
+void BigOn(int *arr, int size){
 	int maxelement=0;
 	for(int i=0; i<size; i++){
 		if(arr[i] > maxelement)
 			maxelement = arr[i];
 	}
 	int *count = (int *) malloc(sizeof(int) * (maxelement+1));
+	for(int i=0; i<=maxelement; i++){
+		count[i]=0;
+	}
 	for(int i=0; i<size; i++){
 		count[arr[i]]++;
 	}
 	for(int i=0;i<size; i++){
 		if(count[i] > 1)
-			printf("Duplicate found: %d\n", i);
+			printf("BigOn, Duplicate found: %d\n", i);
 	}
 }
 int main(){
-	int arr[7]={2, 3, 1, 5, 6, 4, 3};
-	//nsquare(arr);
-	n(arr, 7);
+	int array[50], n=0;
+	printf("Enter number of elements in array:\n");
+	scanf("%x", &n);
+	printf("Enter the elements:\n");
+	for(int i=0; i < n; i++){
+		scanf("%x", &array[i]);
+	}
+	printf("Before Searching\n");
+	for(int i=0; i < n; i++){
+		printf("array[%d] = %d\n", i, array[i]);
+	}
+	BigOnsquare(array, n);
+	BigOn(array, n);
 	return 0;
 }
