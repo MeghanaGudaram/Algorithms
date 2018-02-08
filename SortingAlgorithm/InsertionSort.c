@@ -11,10 +11,10 @@ void InsertionSort(int *array, int n);
 int main(){
 	int array[50], n=0;
 	printf("Enter number of elements in array:\n");
-	scanf("%x", &n);
+	scanf("%d", &n);
 	printf("Enter the elements:\n");
 	for(int i=0; i < n; i++){
-		scanf("%x", &array[i]);
+		scanf("%d", &array[i]);
 	}
 	printf("Before Sorting\n");
 	for(int i=0; i < n; i++){
